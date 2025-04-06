@@ -10,10 +10,10 @@ fn get_cpu_temp() -> Result<f32> {
 
 fn temp_to_duty_cycle(temp: f32) -> f64 {
     match temp {
-        t if t < 50.0 => 0.0, // Fan off below 40°C
-        t if t < 55.0 => 0.2, // 20% duty cycle
+        t if t < 55.0 => 0.0, // Fan off below 40°C
+        t if t < 60.0 => 0.2, // 20% duty cycle
         t if t < 63.0 => 0.5, // 50% duty cycle
-        t if t < 70.0 => 0.7, // 70% duty cycle
+        t if t < 70.0 => 0.8, // 70% duty cycle
         _ => 1.0,             // Full speed over 70°C
     }
 }
