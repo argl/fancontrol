@@ -21,7 +21,7 @@ fn temp_to_duty_cycle(temp: f32) -> f64 {
 fn main() -> Result<()> {
     // PWM frequency for fan control should typically be 25kHz
     let pwm = Pwm::with_frequency(
-        Channel::Pwm2, // GPIO18 uses PWM0
+        Channel::Pwm0, // GPIO12 uses PWM0 on RPi5
         25000.0,       // 25 kHz PWM frequency
         0.0,           // initial duty cycle (0%)
         Polarity::Normal,
